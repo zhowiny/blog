@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="zhowiny小客栈">
 <meta property="og:description" content="前言最近，在学习前端的过程中，遇到不少问题，每次遇到问题都要去网上查相应的资料，很麻烦，而且经常查了又忘，因此想找个地方把自己学习过程中遇到的问题都记录下来，也算是复习。 首先是搭建这个博客的过程，经过资料查询，觉得Hexo这个静态博客搭建工具不错，而且还可以学习git和github，把静态博客页面放在github page上，也是省下了一笔服务器费用(毕竟这个记录用的博客也不怎么用得到后台)。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-22T10:18:40.584Z">
+<meta property="og:updated_time" content="2018-11-22T10:20:34.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建记录">
 <meta name="twitter:description" content="前言最近，在学习前端的过程中，遇到不少问题，每次遇到问题都要去网上查相应的资料，很麻烦，而且经常查了又忘，因此想找个地方把自己学习过程中遇到的问题都记录下来，也算是复习。 首先是搭建这个博客的过程，经过资料查询，觉得Hexo这个静态博客搭建工具不错，而且还可以学习git和github，把静态博客页面放在github page上，也是省下了一笔服务器费用(毕竟这个记录用的博客也不怎么用得到后台)。">
@@ -207,13 +207,11 @@ Enter same passphrase again:&lt;再次输入密码&gt;
 <li><p>登陆github，点击右上角头像下拉菜单中的Settings，找到SSH and GPG keys，选择New SSH Key，将复制的内容粘贴到Key一栏里，点击Add SSH Key即可完成添加。</p>
 </li>
 <li><p>回到Git Bash中，输入以下命令，看是否设置成功：</p>
-<pre><code>$ ssh -T git@github.com
-</code></pre></li>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>如果是下面的反馈：</p>
-<pre><code>The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.
-RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
-Are you sure you want to continue connecting (yes/no)?
-</code></pre><p> 输入yes，然后会看到：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure>
+<p> 输入yes，然后会看到：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi cnfeat! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 </li>
 </ol>

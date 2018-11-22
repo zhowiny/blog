@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="zhowiny小客栈">
 <meta property="og:description" content="前言最近，在学习前端的过程中，遇到不少问题，每次遇到问题都要去网上查相应的资料，很麻烦，而且经常查了又忘，因此想找个地方把自己学习过程中遇到的问题都记录下来，也算是复习。 首先是搭建这个博客的过程，经过资料查询，觉得Hexo这个静态博客搭建工具不错，而且还可以学习git和github，把静态博客页面放在github page上，也是省下了一笔服务器费用(毕竟这个记录用的博客也不怎么用得到后台)。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-22T10:20:34.985Z">
+<meta property="og:updated_time" content="2018-11-22T10:26:04.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建记录">
 <meta name="twitter:description" content="前言最近，在学习前端的过程中，遇到不少问题，每次遇到问题都要去网上查相应的资料，很麻烦，而且经常查了又忘，因此想找个地方把自己学习过程中遇到的问题都记录下来，也算是复习。 首先是搭建这个博客的过程，经过资料查询，觉得Hexo这个静态博客搭建工具不错，而且还可以学习git和github，把静态博客页面放在github page上，也是省下了一笔服务器费用(毕竟这个记录用的博客也不怎么用得到后台)。">
@@ -201,24 +201,13 @@ Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt
 Enter same passphrase again:&lt;再次输入密码&gt;
 </code></pre><p>输入完密码后ssh key就生成完毕了。</p>
 <h3 id="添加SSH-Key到GitHub"><a href="#添加SSH-Key到GitHub" class="headerlink" title="添加SSH Key到GitHub"></a>添加SSH Key到GitHub</h3><p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
-<ol>
-<li><p>打开 C:\Users\Administrator.ssh\id_rsa.pub 文件，这个文件就是刚刚生成的密钥文件，用编辑器打开文件并复制文件里的内容。</p>
-</li>
-<li><p>登陆github，点击右上角头像下拉菜单中的Settings，找到SSH and GPG keys，选择New SSH Key，将复制的内容粘贴到Key一栏里，点击Add SSH Key即可完成添加。</p>
-</li>
-<li><p>回到Git Bash中，输入以下命令，看是否设置成功：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果是下面的反馈：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure>
-<p> 输入yes，然后会看到：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi cnfeat! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="5">
-<li>此时已经可以通过SSH连接到github了，但是你还需要完善一些个人信息： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在Git Bash中输入下面两条命令，进行个人信息的设置</span><br><span class="line">$ git config --global user.name &quot;cnfeat&quot;//填写用户名</span><br><span class="line">$ git config --global user.email &quot;cnfeat@gmail.com&quot;//填写邮箱</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<p>1.打开 C:\Users\Administrator.ssh\id_rsa.pub 文件，这个文件就是刚刚生成的密钥文件，用编辑器打开文件并复制文件里的内容。</p>
+<p>2.登陆github，点击右上角头像下拉菜单中的Settings，找到SSH and GPG keys，选择New SSH Key，将复制的内容粘贴到Key一栏里，点击Add SSH Key即可完成添加。</p>
+<p>3.回到Git Bash中，输入以下命令，看是否设置成功：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
+<p>4.如果是下面的反馈：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure></p>
+<p>输入yes，然后会看到：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi cnfeat! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+</code></pre><p>5.此时已经可以通过SSH连接到github了，但是你还需要完善一些个人信息：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在Git Bash中输入下面两条命令，进行个人信息的设置</span><br><span class="line">$ git config --global user.name &quot;cnfeat&quot;//填写用户名</span><br><span class="line">$ git config --global user.email &quot;cnfeat@gmail.com&quot;//填写邮箱</span><br></pre></td></tr></table></figure></p>
 <p>到此为止，本地Git到远程github仓库的配置全部完成了，下面开始正式进入有关Hexo的内容了。</p>
 <hr>
 <h2 id="搭建Hexo静态博客"><a href="#搭建Hexo静态博客" class="headerlink" title="搭建Hexo静态博客"></a>搭建Hexo静态博客</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>安装Hexo不需要去什么官方网站下载，只需要你打开Git Bash，在里面输入下面的命令：</p>
@@ -245,12 +234,10 @@ $ hexo s            //等同于hexo server，启动一个本地服务器用来�
   repo: https://github.com/zhowiny/blog.git
   branch: gh-pages
 </code></pre><p>注意：在yml文件中，冒号后面必须有一个空格，不然执行部署命令的时候会报错。</p>
-<h3 id="创建一篇新文章"><a href="#创建一篇新文章" class="headerlink" title="创建一篇新文章"></a>创建一篇新文章</h3><ol>
-<li><p>在Git Bash中输入：</p>
+<h3 id="创建一篇新文章"><a href="#创建一篇新文章" class="headerlink" title="创建一篇新文章"></a>创建一篇新文章</h3><p>1.在Git Bash中输入：</p>
 <pre><code>$ hexo new &quot;article name&quot;
-</code></pre></li>
-<li><p>在博客目录下的source文件夹中的_post文件夹里找到你新建的md文件，使用Markdown语法书写你的文章</p>
-</li>
+</code></pre><ol start="2">
+<li>在博客目录下的source文件夹中的_post文件夹里找到你新建的md文件，使用Markdown语法书写你的文章</li>
 <li>最后使用 <code>hexo g</code> 命令生成相应的静态文件即可。</li>
 </ol>
 <h3 id="部署静态博客到github"><a href="#部署静态博客到github" class="headerlink" title="部署静态博客到github"></a>部署静态博客到github</h3><p>在Git Bash中输入：</p>
